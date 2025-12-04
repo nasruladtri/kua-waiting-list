@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   firebase-emulators:
-    image: kua-emulators:latest
+    image: kua-emulators:v2
     build:
       context: .
       dockerfile: docker/emulators.Dockerfile
@@ -16,9 +16,9 @@ services:
       - "5100:5001"   # Cloud Functions - PORT BARU
     volumes:
       - emulator-data:/root/.cache/firebase/emulators
-      - ./backend/firebase.json:/workspace/firebase.json
-      - ./backend/firestore.rules:/workspace/firestore.rules
-      - ./backend/storage.rules:/workspace/storage.rules
+
+
+
 
     environment:
       - FIRESTORE_EMULATOR_HOST=firestore:8080

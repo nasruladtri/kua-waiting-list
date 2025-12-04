@@ -11,6 +11,8 @@ RUN npm install -g firebase-tools@latest
 
 WORKDIR /workspace
 
+ENV CACHE_BUST=2025-12-04-v2
+
 COPY backend/firebase.json .
 COPY backend/.firebaserc .
 COPY backend/firestore.rules .
