@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: docker/emulators.Dockerfile
-    image: kua-emulators:v2
+    image: kua-emulators:v3
     container_name: kua-emulators
     restart: unless-stopped
     ports:
