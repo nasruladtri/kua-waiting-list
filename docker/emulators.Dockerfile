@@ -1,7 +1,7 @@
 FROM node:20-alpine
 
 RUN apk add --no-cache \
-    openjdk11-jre \
+    openjdk21-jre \
     python3 \
     py3-pip \
     git \
