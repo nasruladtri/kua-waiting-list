@@ -9,11 +9,11 @@ services:
     container_name: kua-emulators
     restart: unless-stopped
     ports:
-      - "4000:4000"   # Emulator UI
-      - "8080:8080"   # Firestore
-      - "9099:9099"   # Authentication
-      - "9199:9199"   # Storage
-      - "5001:5001"   # Cloud Functions
+      - "4100:4000"   # Emulator UI - PORT BARU
+      - "8282:8080"   # Firestore - PORT BARU  
+      - "9190:9099"   # Authentication - PORT BARU
+      - "9292:9199"   # Storage - PORT BARU
+      - "5100:5001"   # Cloud Functions - PORT BARU
     volumes:
       - emulator-data:/root/.cache/firebase/emulators
       - ./backend:/workspace
@@ -26,17 +26,6 @@ services:
     networks:
       - kua-network
 
-  flutter-web:
-    image: nginx:alpine
-    container_name: kua-webapp
-    restart: unless-stopped
-    ports:
-      - "8081:80"   # Flutter web di port 8081, karena 8080 sudah dipakai emulator
-    volumes:
-      - ./frontend/build/web:/usr/share/nginx/html
-    networks:
-      - kua-network
-
 volumes:
   emulator-data:
     driver: local
@@ -44,3 +33,4 @@ volumes:
 networks:
   kua-network:
     driver: bridge
+    name: kua-network-v2  # Nama jaringan unik
