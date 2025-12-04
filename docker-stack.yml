@@ -16,6 +16,9 @@ services:
       - "5100:5001"   # Cloud Functions - PORT BARU
     volumes:
       - emulator-data:/root/.cache/firebase/emulators
+      - ./backend/firebase.json:/workspace/firebase.json
+      - ./backend/firestore.rules:/workspace/firestore.rules
+      - ./backend/storage.rules:/workspace/storage.rules
 
     environment:
       - FIRESTORE_EMULATOR_HOST=firestore:8080
