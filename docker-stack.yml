@@ -16,7 +16,7 @@ services:
       - "5100:5001"   # Cloud Functions - PORT BARU
     volumes:
       - emulator-data:/root/.cache/firebase/emulators
-      - ./backend:/workspace
+
     environment:
       - FIRESTORE_EMULATOR_HOST=firestore:8080
       - FIREBASE_AUTH_EMULATOR_HOST=auth:9099
@@ -33,4 +33,4 @@ volumes:
 networks:
   kua-network:
     driver: bridge
-    name: kua-network-v2  # Nama jaringan unik
+    name: kua-network-v2   # Nama jaringan unik
